@@ -13,6 +13,14 @@ __copyright__ = "2015 Susan Sim"
 __license__ = "MIT License"
 
 
+def compare_schemas(row1, row2):
+    if row1 == row2:
+        return True
+    else:
+        raise MismatchedAttributesException
+        return False
+
+
 def union(table1, table2):
     """
     Perform the union set operation on tables, table1 and table2.
@@ -24,12 +32,20 @@ def union(table1, table2):
         if tables t1 and t2 don't have the same attributes
     """
 
-    union_list = []
+    try:
+        compare_schemas(table1[0], table2[0])
+    except MismatchedAttributesException:
+        print "Schemas do not match."
+        return False
 
-    if(table1[0] == table2[0]):
-        union_list = table1 + table2[1:]
-    else:
-        raise MismatchedAttributesException
+    union_list = []
+    union_list.append(table1[0])
+
+    for list_item in table1[1:]:
+        if list_item not in table2[1:]:
+            union_list.append(list_item)
+    union_list += table2[1:]
+
     return union_list
 
 
@@ -38,7 +54,21 @@ def intersection(table1, table2):
     Describe your function
 
     """
-    return []
+
+    try:
+        compare_schemas(table1[0], table2[0])
+    except MismatchedAttributesException:
+        print "Schemas do not match."
+        return False
+
+    intersection_list = []
+    intersection_list.append(table1[0])
+
+    for list_item in table1[1:]:
+        if list_item in table2[1:]:
+            intersection_list.append(list_item)
+
+    return intersection_list
 
 
 def difference(table1, table2):
@@ -46,7 +76,21 @@ def difference(table1, table2):
     Describe your function
 
     """
-    return []
+
+    try:
+        compare_schemas(table1[0], table2[0])
+    except MismatchedAttributesException:
+        print "Schemas do not match."
+        return False
+
+    difference_list = []
+    difference_list.append(table1[0])
+
+    for list_item in table1[1:]:
+        if list_item not in table2[1:]:
+            difference_list.append(list_item)
+
+    return difference_list
 
 
 #####################
@@ -74,4 +118,3 @@ class MismatchedAttributesException(Exception):
     don't have the same attributes.
     """
     pass
-
