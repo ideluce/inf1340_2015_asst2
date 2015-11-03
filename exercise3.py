@@ -23,7 +23,14 @@ def union(table1, table2):
     :raises: MismatchedAttributesException:
         if tables t1 and t2 don't have the same attributes
     """
-    return []
+
+    union_list = []
+
+    if(table1[0] == table2[0]):
+        union_list = table1 + table2[1:]
+    else:
+        raise MismatchedAttributesException
+    return union_list
 
 
 def intersection(table1, table2):
