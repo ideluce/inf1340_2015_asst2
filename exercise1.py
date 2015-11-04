@@ -16,8 +16,8 @@ def pig_latinify(word):
     """
     Describe your function
 
-    :param :
-    :return:
+    :param : word (string)
+    :return: the word translated into piglatin
     :raises:
 
     """
