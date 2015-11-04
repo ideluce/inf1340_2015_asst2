@@ -26,24 +26,22 @@ def find(input_string, substring, start, end):
 
     i = 0
     match_start = -1
-    in_match = False
-    while i < (len(search_area)-1):
+
+    while i < len(search_area)-(len(substring)-1):  # stop search if past end
         letter = search_area[i]
-        if in_match is False:
-            if letter == substring[0]:
-                in_match = True
-                restart_i = i
-                j = 0
-                match_start = i + start
-                j += 1
-        elif in_match is True and j < len(substring):
-            if letter != substring[j]:
-                in_match = False
-                match_start = -1
-                i = restart_i
-            j += 1
-        elif in_match is True and j == len(substring):
-            return match_start
+        if letter == substring[0]:
+            j = i + 1  # j and k are +1 since already found first match above
+            k = 1
+            while k < len(substring):
+                if substring[k] == search_area[j]:
+                    if k == len(substring)-1:
+                        match_start = i + start
+                        return match_start  # short circuit if complete match
+                    j += 1
+                    k += 1
+                else:
+                    match_start = -1
+                    k = len(substring)  # end while loop early
         i += 1
 
     return match_start
