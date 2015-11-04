@@ -25,10 +25,12 @@ STUDENTS = [["Number", "Surname", "Age", "GradYear"],
 
 GRADUATES = [["Number", "Surname", "Age"],
              [7274, "Robinson", 37],
+             [7274, "Robinson", 37],
              [7432, "O'Malley", 39],
              [9824, "Darkes", 38]]
 
 MANAGERS = [["Number", "Surname", "Age"],
+            [9297, "O'Malley", 56],
             [9297, "O'Malley", 56],
             [7432, "O'Malley", 39],
             [9824, "Darkes", 38]]
