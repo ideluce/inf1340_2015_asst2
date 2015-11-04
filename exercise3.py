@@ -12,6 +12,7 @@ __email__ = "ses@drsusansim.org"
 __copyright__ = "2015 Susan Sim"
 __license__ = "MIT License"
 
+
 def compare_schemas(row1, row2):
     if row1 == row2:
         return True
@@ -34,7 +35,7 @@ def union(table1, table2):
     try:
         compare_schemas(table1[0], table2[0])
     except MismatchedAttributesException:
-        print "Schemas do not match."
+        raise MismatchedAttributesException
         return False
 
     union_list = []
@@ -44,10 +45,11 @@ def union(table1, table2):
         if list_item not in table2[1:]:
             union_list.append(list_item)
     union_list += table2[1:]
+    union_list = remove_duplicates(union_list)
 
     return union_list
 
-union(GRADUATES, MANAGERS)
+
 def intersection(table1, table2):
     """
     Describe your function
@@ -57,7 +59,7 @@ def intersection(table1, table2):
     try:
         compare_schemas(table1[0], table2[0])
     except MismatchedAttributesException:
-        print "Schemas do not match."
+        raise MismatchedAttributesException
         return False
 
     intersection_list = []
@@ -66,6 +68,8 @@ def intersection(table1, table2):
     for list_item in table1[1:]:
         if list_item in table2[1:]:
             intersection_list.append(list_item)
+
+    intersection_list = remove_duplicates(intersection_list)
 
     return intersection_list
 
@@ -79,8 +83,7 @@ def difference(table1, table2):
     try:
         compare_schemas(table1[0], table2[0])
     except MismatchedAttributesException:
-        print "Schemas do not match."
-        return False
+        raise MismatchedAttributesException
 
     difference_list = []
     difference_list.append(table1[0])
@@ -88,6 +91,8 @@ def difference(table1, table2):
     for list_item in table1[1:]:
         if list_item not in table2[1:]:
             difference_list.append(list_item)
+
+    difference_list = remove_duplicates(difference_list)
 
     return difference_list
 

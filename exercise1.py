@@ -28,15 +28,12 @@ def pig_latinify(word):
     # sanitize input
     if(type(word) is str):
         word = word.strip()
-        try:
-            if (word.isalpha() is False):
-                return "Input error."
-            else:
-                word = word.lower()
-        except AttributeError:
-            return "Input error."
+        if (word.isalpha() is False):
+            raise ValueError
+        else:
+            word = word.lower()
     else:
-        return "Input error."
+        raise ValueError
 
     # get first letter type
     if(word[0] in vowels):
