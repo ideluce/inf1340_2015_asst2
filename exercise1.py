@@ -18,7 +18,7 @@ def pig_latinify(word):
 
     :param : word (string)
     :return: the word translated into piglatin
-    :raises:
+    :raises: AttributeError: if word is not entirely alphabetical or lower case
 
     """
     result = ""

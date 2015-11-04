@@ -15,8 +15,8 @@ def find(input_string, substring, start, end):
     """
     Describe your function
 
-    :param :
-    :return:
+    :param : string, substring
+    :return: index of first instance of substring
     :raises:
 
     """
@@ -49,8 +49,8 @@ def multi_find(input_string, substring, start, end):
     """
     Describe your function
 
-    :param :
-    :return:
+    :param : string, substring
+    :return: all starting indices of substring in string form, separated by commas
     :raises:
 
     """
