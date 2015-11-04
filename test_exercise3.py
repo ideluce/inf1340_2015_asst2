@@ -17,10 +17,10 @@ from exercise3 import union, intersection, difference, MismatchedAttributesExcep
 ###########
 # TABLES ##
 ###########
-STUDENTS = [["Number", "Surname", "GradYear"],
-            [9297, "O'Malley", 2015],
-            [7432, "O'Malley", 2014],
-            [9824, "Darkes", 2013]]
+STUDENTS = [["Number", "Surname", "Age", "GradYear"],
+            [7274, "Robinson", 37, 2010],
+            [7432, "O'Malley", 39, 2012],
+            [9824, "Darkes", 38, 2015]]
 
 
 GRADUATES = [["Number", "Surname", "Age"],
@@ -36,6 +36,8 @@ MANAGERS = [["Number", "Surname", "Age"],
 #####################
 # HELPER FUNCTIONS ##
 #####################
+
+
 def is_equal(t1, t2):
     return set(map(tuple, t1)) == set(map(tuple, t2))
 
@@ -80,6 +82,7 @@ def test_intersection():
         assert True
     else:
         assert False
+
 
 def test_difference():
     """
