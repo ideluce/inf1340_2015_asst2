@@ -36,7 +36,6 @@ def union(table1, table2):
         compare_schemas(table1[0], table2[0])
     except MismatchedAttributesException:
         raise MismatchedAttributesException
-        return False
 
     union_list = []
     union_list.append(table1[0])
@@ -60,7 +59,6 @@ def intersection(table1, table2):
         compare_schemas(table1[0], table2[0])
     except MismatchedAttributesException:
         raise MismatchedAttributesException
-        return False
 
     intersection_list = []
     intersection_list.append(table1[0])
