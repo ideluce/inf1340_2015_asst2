@@ -18,7 +18,6 @@ def compare_schemas(row1, row2):
         return True
     else:
         raise MismatchedAttributesException
-        return False
 
 
 def union(table1, table2):
@@ -53,6 +52,14 @@ def intersection(table1, table2):
     """
     Describe your function
 
+    Perform the intersection set operation on tables, table1 and table2.
+
+    :param table1: a table (a List of Lists)
+    :param table2: a table (a List of Lists)
+    :return: the resulting table
+    :raises: MismatchedAttributesException:
+        if tables t1 and t2 don't have the same attributes
+
     """
 
     try:
@@ -75,6 +82,14 @@ def intersection(table1, table2):
 def difference(table1, table2):
     """
     Describe your function
+
+    Perform the difference set operation on tables, table1 and table2.
+
+    :param table1: a table (a List of Lists)
+    :param table2: a table (a List of Lists)
+    :return: the resulting table
+    :raises: MismatchedAttributesException:
+        if tables t1 and t2 don't have the same attributes
 
     """
 

@@ -50,16 +50,15 @@ def multi_find(input_string, substring, start, end):
     """
     Describe your function
 
-    :param :
-    :return:
-    :raises:
+    :param : string, substring, start, end
+    :return: starting indexes of input_string where substring is found
+            as string and separated by commas
 
     """
     result = ""
     i = start
     j = i
     while(i < end):
-        # call find() once
         substring_check = find(input_string, substring, j, end)
 
         if substring_check != -1:
