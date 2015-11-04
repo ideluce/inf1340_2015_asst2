@@ -27,6 +27,7 @@ def find(input_string, substring, start, end):
 
     while i < len(search_area)-(len(substring)-1):  # stop search if past end
         letter = search_area[i]
+
         if letter == substring[0]:
             j = i + 1  # j and k are +1 since already found first match above
             k = 1

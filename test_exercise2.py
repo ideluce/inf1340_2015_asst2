@@ -32,3 +32,13 @@ def test_multi_find_basic():
     assert multi_find("Ni! Ni! Ni! Ni!", "Ni", 0, 20) == "0,4,8,12"
     assert multi_find("Ni! No! No! Ni!", "Ni", 0, 20) == "0,12"
     assert multi_find("Ni! Ni! Ni! No!", "Ni", 0, 20) == "0,4,8"
+    assert multi_find("Ni! Ni! Ni! Ni!", "Hi", 0, 20) == ""
+    assert multi_find("12! Ni! Ni! 12!", "12", 0, 20) == "0,12"
+    assert multi_find("Ni! Ni! Ni! Ni!", "NI", 0, 20) == ""
+    assert multi_find("Ni! Ni! Ni! Ni!", "ni", 0, 20) == ""
+    assert multi_find("ATCGGGGTGCGCGGGGAT", "GGGG", 0, 23) == "3,12"
+    assert multi_find("ATCGGGGTGCGCGGGGAT", "GGGG", 6, 23) == "12"
+    assert multi_find("ATCGGGGTGCGCGGGGAT", "GGGG", 0, 13) == "3"
+    assert multi_find("ATCGGGGTGCGCGGGGAT", "GGGG", 6, 13) == ""
+    assert multi_find("ATCGGGGTGCGCGGG", "GGGG", 0, 23) == "3"
+
