@@ -32,4 +32,3 @@ def test_multi_find_basic():
     assert multi_find("Ni! Ni! Ni! Ni!", "Ni", 0, 20) == "0,4,8,12"
     assert multi_find("Ni! No! No! Ni!", "Ni", 0, 20) == "0,12"
     assert multi_find("Ni! Ni! Ni! No!", "Ni", 0, 20) == "0,4,8"
-

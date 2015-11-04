@@ -11,13 +11,13 @@ __email__ = "ses@drsusansim.org"
 __copyright__ = "2015 Susan Sim"
 __license__ = "MIT License"
 
+
 def find(input_string, substring, start, end):
     """
     Describe your function
 
-    :param :
-    :return:
-    :raises:
+    :param : input_string (string), substring (string), start (int), end (int)
+    :return: match_start (int)
 
     """
     search_area = input_string[start:end]
@@ -58,11 +58,14 @@ def multi_find(input_string, substring, start, end):
     i = start
     j = i
     while(i < end):
-        substring_check = find(input_string, substring, j, end) #the find() function is now only called once
+        # call find() once
+        substring_check = find(input_string, substring, j, end)
+
         if substring_check != -1:
             latestindex = substring_check
             result += str(latestindex) + ","
             j = latestindex + 1
+
         i += 1
     result = result.rstrip(",")
     return result
