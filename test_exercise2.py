@@ -12,27 +12,24 @@ __copyright__ = "2015 Susan Sim"
 __license__ = "MIT License"
 
 from exercise2 import find, multi_find
-print True if "t" == "T" else False
+
 
 def test_find_basic():
     """
     Test find function.
     """
     assert find("This is an ex-parrot", "parrot", 0, 20) == 14
-    assert find("actggggtttt", "actg", 0, 10) == 0
-    assert find("actggggtttt", "tttt", 0, 10) == 7
-    assert find("actggggtttt", "TTTT", 0, 10) == -1
-    assert find("ACTGGGGTTTT", "tttt", 0, 10) == -1
-    assert find("actgg1234", "1234", 0, 8) == 5
+    assert find("This is an ex-parrot", "an", 0, 20) == 8
+    assert find("This is an ex-parrot", "This", 0, 20) == 0
+    assert find("This is an ex-parrot", "this", 0, 20) == -1
+    assert find("This is an ex-parrot", "THIS", 0, 20) == -1
+
 
 def test_multi_find_basic():
     """
     Test multi_find function.
     """
     assert multi_find("Ni! Ni! Ni! Ni!", "Ni", 0, 20) == "0,4,8,12"
-    assert find("actggggtttt", "actg", 0, 10) == 0
-    assert find("actggggtttt", "tttt", 0, 10) == 7
-    assert find("actggggtttt", "TTTT", 0, 10) == -1
-    assert find("ACTGGGGTTTT", "tttt", 0, 10) == -1
-    assert find("actgg1234", "1234", 0, 8) == 5
+    assert multi_find("Ni! No! No! Ni!", "Ni", 0, 20) == "0,12"
+    assert multi_find("Ni! Ni! Ni! No!", "Ni", 0, 20) == "0,4,8"
 

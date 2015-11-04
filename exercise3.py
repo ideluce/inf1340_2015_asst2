@@ -12,7 +12,6 @@ __email__ = "ses@drsusansim.org"
 __copyright__ = "2015 Susan Sim"
 __license__ = "MIT License"
 
-
 def compare_schemas(row1, row2):
     if row1 == row2:
         return True
@@ -48,7 +47,7 @@ def union(table1, table2):
 
     return union_list
 
-
+union(GRADUATES, MANAGERS)
 def intersection(table1, table2):
     """
     Describe your function
