@@ -26,6 +26,9 @@ def test_basic():
 
 
 def test_advanced():
+    """
+    More advanced test cases, with ys and spaces and cases
+    """
     assert pig_latinify('python') == 'ythonpay'
     assert pig_latinify('yooper') == 'ooperyay'
     assert pig_latinify('Youth') == 'outhyay'
@@ -35,8 +38,40 @@ def test_advanced():
 
 
 def test_bad_inputs():
-    assert pig_latinify('12345') == 'Input error.'
-    assert pig_latinify('two words') == 'Input error.'
-    assert pig_latinify('c0mb1n3dw0rd') == 'Input error.'
-    assert pig_latinify(12345) == 'Input error.'
-    assert pig_latinify(["list", 1]) == 'Input error.'
+    """
+    Test cases for incorrect inputs
+    """
+    try:
+        pig_latinify('12345')
+    except ValueError:
+        assert True
+    else:
+        assert False
+
+    try:
+        pig_latinify('two words') == False
+    except ValueError:
+        assert True
+    else:
+        assert False
+
+    try:
+        pig_latinify('c0mb1n3d,w0rd') == False
+    except ValueError:
+        assert True
+    else:
+        assert False
+
+    try:
+        pig_latinify(12345) == False
+    except ValueError:
+        assert True
+    else:
+        assert False
+
+    try:
+        pig_latinify(["list", 1]) == False
+    except ValueError:
+        assert True
+    else:
+        assert False
