@@ -65,6 +65,11 @@ def test_union():
 
     assert is_equal(result, union(GRADUATES, MANAGERS))
 
+
+    ##################################
+    ##Test if tables are equal########
+    ##################################
+
     try:
         is_equal(result, union(GRADUATES, STUDENTS))
     except MismatchedAttributesException:
@@ -89,6 +94,10 @@ def test_intersection():
 
     assert is_equal(result, intersection(GRADUATES, MANAGERS))
 
+   ##################################
+   ##Test if tables are equal########
+   ##################################
+
     try:
         is_equal(result, intersection(GRADUATES, STUDENTS))
     except MismatchedAttributesException:
@@ -112,6 +121,10 @@ def test_difference():
               [7274, "Robinson", 37]]
 
     assert is_equal(result, difference(GRADUATES, MANAGERS))
+
+   ##################################
+   ##Test if tables are equal########
+   ##################################
 
     try:
         is_equal(result, difference(GRADUATES, STUDENTS))

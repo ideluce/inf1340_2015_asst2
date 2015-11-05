@@ -41,4 +41,3 @@ def test_multi_find_basic():
     assert multi_find("ATCGGGGTGCGCGGGGAT", "GGGG", 0, 13) == "3"
     assert multi_find("ATCGGGGTGCGCGGGGAT", "GGGG", 6, 13) == ""
     assert multi_find("ATCGGGGTGCGCGGG", "GGGG", 0, 23) == "3"
-

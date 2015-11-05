@@ -11,6 +11,9 @@ __email__ = "ses@drsusansim.org"
 __copyright__ = "2015 Susan Sim"
 __license__ = "MIT License"
 
+input_string = "Hello my name is Isabelle"
+substring = "my"
+end = len(input_string) - 1
 
 def find(input_string, substring, start, end):
     """
@@ -44,7 +47,7 @@ def find(input_string, substring, start, end):
         i += 1
 
     return match_start
-
+find(input_string, substring, 0, end)
 
 def multi_find(input_string, substring, start, end):
     """
