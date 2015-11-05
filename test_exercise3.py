@@ -22,7 +22,6 @@ STUDENTS = [["Number", "Surname", "Age", "GradYear"],
             [7432, "O'Malley", 39, 2012],
             [9824, "Darkes", 38, 2015]]
 
-
 GRADUATES = [["Number", "Surname", "Age"],
              [7274, "Robinson", 37],
              [7274, "Robinson", 37],
@@ -34,6 +33,12 @@ MANAGERS = [["Number", "Surname", "Age"],
             [9297, "O'Malley", 56],
             [7432, "O'Malley", 39],
             [9824, "Darkes", 38]]
+
+EMPLOYEES = [["Surname", "Number", "Age"],
+             ["O'Malley", 9297, 56],
+             ["O'Malley", 9297, 56],
+             ["O'Malley", 7432, 39],
+             ["Darkes", 9824, 38]]
 
 #####################
 # HELPER FUNCTIONS ##
@@ -66,7 +71,13 @@ def test_union():
         assert True
     else:
         assert False
-
+    
+    try:
+        is_equal(result, union(EMPLOYEES, MANAGERS))
+    except MismatchedAttributesException:
+        assert True
+    else:
+        assert False
 
 def test_intersection():
     """
@@ -85,6 +96,12 @@ def test_intersection():
     else:
         assert False
 
+    try:
+        is_equal(result, intersection(EMPLOYEES, MANAGERS))
+    except MismatchedAttributesException:
+        assert True
+    else:
+        assert False
 
 def test_difference():
     """
@@ -98,6 +115,13 @@ def test_difference():
 
     try:
         is_equal(result, difference(GRADUATES, STUDENTS))
+    except MismatchedAttributesException:
+        assert True
+    else:
+        assert False
+
+    try:
+        is_equal(result, difference(EMPLOYEES, MANAGERS))
     except MismatchedAttributesException:
         assert True
     else:
