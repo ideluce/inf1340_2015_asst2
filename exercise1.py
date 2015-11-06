@@ -6,9 +6,9 @@ This module converts English words to Pig Latin words
 
 """
 
-__author__ = 'Susan Sim'
-__email__ = "ses@drsusansim.org"
-__copyright__ = "2015 Susan Sim"
+__author__ = 'Isabelle Deluce and Tyler Harangozo'
+__email__ = "isabelle.deluce@mail.utoronto.ca;tyler.harangozo@mail.utoronto.ca"
+__copyright__ = "2015"
 __license__ = "MIT License"
 
 

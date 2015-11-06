@@ -6,18 +6,16 @@ This module converts performs substring matching for DNA sequencing
 
 """
 
-__author__ = 'Susan Sim'
-__email__ = "ses@drsusansim.org"
-__copyright__ = "2015 Susan Sim"
+__author__ = 'Isabelle Deluce and Tyler Harangozo'
+__email__ = "isabelle.deluce@mail.utoronto.ca;tyler.harangozo@mail.utoronto.ca"
+__copyright__ = "2015"
 __license__ = "MIT License"
 
-input_string = "Hello my name is Isabelle"
-substring = "my"
-end = len(input_string) - 1
 
 def find(input_string, substring, start, end):
     """
-    Describe your function
+    Function to find the index of the first occurence of a string within a
+        substring of an input string
 
     :param : input_string (string), substring (string), start (int), end (int)
     :return: match_start (int)
@@ -51,11 +49,12 @@ find(input_string, substring, 0, end)
 
 def multi_find(input_string, substring, start, end):
     """
-    Describe your function
+    Function to find the indexes of all occurrences of a string within a
+        substring of an input string
 
-    :param : string, substring, start, end
+    :param : input_string (string), substring (string), start (int), end (int)
     :return: starting indexes of input_string where substring is found
-            as string and separated by commas
+            as string, separated by commas
 
     """
     result = ""

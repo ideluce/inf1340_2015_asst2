@@ -7,13 +7,21 @@ implemented as lists of lists.
 
 """
 
-__author__ = 'Susan Sim'
-__email__ = "ses@drsusansim.org"
-__copyright__ = "2015 Susan Sim"
+__author__ = 'Isabelle Deluce and Tyler Harangozo'
+__email__ = "isabelle.deluce@mail.utoronto.ca;tyler.harangozo@mail.utoronto.ca"
+__copyright__ = "2015"
 __license__ = "MIT License"
 
 
 def compare_schemas(row1, row2):
+    """
+    Compare schemas of two tables
+
+    :param row1: schema row of table1
+    :param row2: schema row of table2
+    :return: boolean of match
+    :raises: MismatchedAttributesException if row1 != row2
+    """
     if row1 == row2:
         return True
     else:
@@ -27,8 +35,8 @@ def union(table1, table2):
     :param table1: a table (a List of Lists)
     :param table2: a table (a List of Lists)
     :return: the resulting table
-    :raises: MismatchedAttributesException:
-        if tables t1 and t2 don't have the same attributes
+    :raises: MismatchedAttributesException if tables t1 and t2 don't have the
+        same attributes
     """
 
     try:
@@ -50,16 +58,13 @@ def union(table1, table2):
 
 def intersection(table1, table2):
     """
-    Describe your function
-
     Perform the intersection set operation on tables, table1 and table2.
 
     :param table1: a table (a List of Lists)
     :param table2: a table (a List of Lists)
     :return: the resulting table
-    :raises: MismatchedAttributesException:
-        if tables t1 and t2 don't have the same attributes
-
+    :raises: MismatchedAttributesException if tables t1 and t2 don't have the
+        same attributes
     """
 
     try:
@@ -88,9 +93,8 @@ def difference(table1, table2):
     :param table1: a table (a List of Lists)
     :param table2: a table (a List of Lists)
     :return: the resulting table
-    :raises: MismatchedAttributesException:
-        if tables t1 and t2 don't have the same attributes
-
+    :raises: MismatchedAttributesException if tables t1 and t2 don't have the
+        same attributes
     """
 
     try:
