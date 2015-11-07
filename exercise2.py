@@ -45,7 +45,7 @@ def find(input_string, substring, start, end):
         i += 1
 
     return match_start
-find(input_string, substring, 0, end)
+
 
 def multi_find(input_string, substring, start, end):
     """
