@@ -46,8 +46,7 @@ EMPLOYEES = [["Surname", "Number", "Age"],
 
 
 def is_equal(t1, t2):
-    return t1.sort() == t2.sort()
-
+    return sorted(t1) == sorted(t2)
 
 ###################
 # TEST FUNCTIONS ##
